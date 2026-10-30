@@ -1,36 +1,188 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head><meta charset="UTF-8"><title>سياسة الخصوصية — رفيق الطريق</title></head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سياسة الخصوصية - رفيق الطريق</title>
+    <!-- استدعاء خط Tajawal من جوجل -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0f766e; /* لون أخضر مزرق هادئ */
+            --bg-color: #f3f4f6;
+            --text-color: #1f2937;
+            --card-bg: #ffffff;
+            --border-color: #e5e7eb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            padding: 20px;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #4b5563;
+        }
+
+        ul {
+            list-style: none;
+            padding-right: 0;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            background: #f9fafb;
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        ul li strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 5px;
+            font-size: 17px;
+        }
+
+        .contact-box {
+            background: var(--primary-color);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .contact-box a {
+            color: #fbbf24;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+                margin: 10px auto;
+            }
+            .header h1 { font-size: 24px; }
+            h2 { font-size: 20px; }
+        }
+    </style>
+</head>
 <body>
-<h1>سياسة الخصوصية — تطبيق رفيق الطريق</h1>
-<p>آخر تحديث: 30 أكتوبر 2026</p>
 
-<h2>1. البيانات التي نجمعها</h2>
-<p>تطبيق رفيق الطريق يعمل <strong>بالكامل دون اتصال بالإنترنت</strong> ولا يجمع أي بيانات شخصية، ولا يرسل أي معلومات إلى أي خادم. جميع البيانات (الموقع الجغرافي لحساب مواقيت الصلاة، تفضيلات الأذان، سجل التسميع، إعدادات السبحة) تُخزَّن محلياً على جهازك فقط.</p>
+    <div class="container">
+        <div class="header">
+            <h1>سياسة الخصوصية — تطبيق رفيق الطريق</h1>
+            <p>آخر تحديث: 30 أكتوبر 2026</p>
+        </div>
 
-<h2>2. الأذونات وسبب طلبها</h2>
-<ul>
-<li><strong>الموقع (Access Fine Location):</strong> لحساب مواقيت الصلاة بدقة حسب موقعك. لا يتم إرساله لأي مكان.</li>
-<li><strong>الإشعارات (POST_NOTIFICATIONS):</strong> لإظهار إشعار الأذان والسماح بتشغيل الصوت.</li>
-<li><strong>المنبهات الدقيقة (SCHEDULE_EXACT_ALARM / USE_EXACT_ALARM):</strong> لضبط تنبيهات الصلاة في وقتها المحدد تماماً.</li>
-<li><strong>خدمة أمامية للوسائط (FOREGROUND_SERVICE_MEDIA_PLAYBACK):</strong> لتشغيل الأذان كخدمة أمامية موثوقة.</li>
-<li><strong>الاستيقاظ (WAKE_LOCK):</strong> لضمان استمرار تشغيل الأذان في وضع Sleep.</li>
-<li><strong>تشغيل بعد الإقلاع (RECEIVE_BOOT_COMPLETED):</strong> لإعادة جدولة مواقيت الصلاة بعد إعادة تشغيل الجهاز.</li>
-<li><strong>الميكروفون:</strong> لخاصية تسميع القرآن فقط. لا يتم تسجيل أي صوت ولا إرساله لأي مكان.</li>
-</ul>
+        <p>نحن في تطبيق <strong>"رفيق الطريق"</strong> نضع خصوصيتك وأمان بياناتك في مقدمة أولوياتنا. صُمم هذا التطبيق ليعمل <strong>بالكامل دون اتصال بالإنترنت (Offline-first)</strong>، ولا يقوم بجمع أو إرسال أو مشاركة أي بيانات شخصية مع أي خوادم خارجية.</p>
 
-<h2>3. المشاركة مع أطراف ثالثة</h2>
-<p>لا نشارك أي بيانات مع أي طرف ثالث. التطبيق لا يحتوي على أي SDK إعلاني أو تحليلي.</p>
+        <h2>1. البيانات التي نجمعها</h2>
+        <p>التطبيق <strong>لا يجمع أي بيانات إطلاقاً</strong>. جميع البيانات التي تُنشئها أثناء استخدام التطبيق (مثل: إعدادات الأذان، سجل التسميع، إعدادات السبحة، وموقعك الجغرافي لحساب مواقيت الصلاة) يتم تخزينها <strong>محلياً على جهازك فقط</strong>، ولا يمكن لأي طرف ثالث الوصول إليها.</p>
 
-<h2>4. الأطفال</h2>
-<p>التطبيق آمن لجميع الأعمار ولا يجمع بيانات من الأطفال.</p>
+        <h2>2. الأذونات وسبب طلبها بشفافية</h2>
+        <p>لكي يعمل التطبيق بكفاءة، يطلب النظام بعض الأذونات، ونوضحها لك بدقة:</p>
+        <ul>
+            <li>
+                <strong>الموقع الجغرافي (Location)</strong>
+                يُستخدم فقط لحساب مواقيت الصلاة بدقة بناءً على مدينتك. يتم الحساب على جهازك ولا يتم إرسال موقعك لأي مكان.
+            </li>
+            <li>
+                <strong>الميكروفون (Microphone)</strong>
+                يُستخدم حصرياً لخاصية "تسميع القرآن" للاستماع إلى تلاوتك ومطابقتها. لا يتم تسجيل صوتك، ولا حفظه، ولا إرساله لأي جهة.
+            </li>
+            <li>
+                <strong>الإشعارات (Notifications)</strong>
+                ضرورية لإظهار إشعار الأذان في وقته، والسماح للتطبيق بتشغيل الصوت.
+            </li>
+            <li>
+                <strong>المنبهات الدقيقة (Exact Alarms)</strong>
+                لضمان إطلاق تنبيه الصلاة في وقتها المحدد بالثانية، حتى لو كان الجهاز في وضع السكون (Sleep Mode).
+            </li>
+            <li>
+                <strong>تشغيل الوسائط في الخلفية (Foreground Service & WakeLock)</strong>
+                لمنع النظام من إيقاف تشغيل الأذان أو قتل الخدمة أثناء عملك على تطبيقات أخرى.
+            </li>
+            <li>
+                <strong>التشغيل التلقائي (Boot Completed)</strong>
+                لإعادة جدولة مواقيت الصلاة تلقائياً في حال قمت بإعادة تشغيل هاتفك.
+            </li>
+        </ul>
 
-<h2>5. حذف البيانات</h2>
-<p>يمكنك حذف جميع بياناتك في أي وقت عبر إعدادات التطبيق ← مسح البيانات، أو بإلغاء تثبيت التطبيق.</p>
+        <h2>3. المشاركة مع أطراف ثالثة</h2>
+        <p>التطبيق لا يحتوي على أي إعلانات، ولا أدوات تتبع (Analytics)، ولا يشارك أي بيانات مع أي طرف ثالث. تطبيقنا آمن تماماً لجميع الأعمار.</p>
 
-<h2>6. التغييرات على هذه السياسة</h2>
-<p>قد نحدّث هذه السياسة من وقت لآخر. سيتم نشر أي تحديث على هذه الصفحة.</p>
+        <h2>4. حذف البيانات</h2>
+        <p>بما أن البيانات مخزنة محلياً على جهازك، يمكنك حذفها في أي وقت عن طريق الذهاب إلى (إعدادات التطبيق ← مسح البيانات)، أو ببساطة عن طريق إلغاء تثبيت التطبيق من هاتفك.</p>
 
-<h2>7. التواصل</h2>
-<p>لأي استفسار: <a href="mailto:rafiqaltariqmuslim@gmail.com">rafiqaltariqmuslim@gmail.com</a></p>
-</body></html>
+        <h2>5. التغييرات على هذه السياسة</h2>
+        <p>قد نقوم بتحديث سياسة الخصوصية من وقت لآخر لمواكبة تحديثات التطبيق. سيتم نشر أي تغييرات على هذه الصفحة مباشرة.</p>
+
+        <div class="contact-box">
+            <h3>هل لديك أي استفسارات؟</h3>
+            <p>لأي أسئلة بخصوص الخصوصية، يرجى التواصل معنا عبر:</p>
+            <!-- لا تنسى تغيير الإيميل هنا -->
+            <a href="mailto:your-email@gmail.com">rafiqaltariqmuslim@gmail.com</a>
+        </div>
+    </div>
+
+</body>
+</html>
